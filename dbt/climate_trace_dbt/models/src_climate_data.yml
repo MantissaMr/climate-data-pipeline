@@ -1,0 +1,322 @@
+version: 2
+sources:
+- name: climate_data_agriculture
+  database: climate_trace
+  schema: agriculture
+  tables:
+  - name: cropland_fires_country_emissions
+    identifier: cropland_fires_country_emissions
+  - name: cropland_fires_emissions_sources
+    identifier: cropland_fires_emissions_sources
+  - name: cropland_fires_emissions_sources_confidence
+    identifier: cropland_fires_emissions_sources_confidence
+  - name: enteric_fermentation_cattle_feedlot_country_emissions
+    identifier: enteric_fermentation_cattle_feedlot_country_emissions
+  - name: enteric_fermentation_cattle_feedlot_emissions_sources
+    identifier: enteric_fermentation_cattle_feedlot_emissions_sources
+  - name: enteric_fermentation_cattle_feedlot_emissions_sources_confidenc
+    identifier: enteric_fermentation_cattle_feedlot_emissions_sources_confidenc
+  - name: enteric_fermentation_cattle_pasture_country_emissions
+    identifier: enteric_fermentation_cattle_pasture_country_emissions
+  - name: enteric_fermentation_cattle_pasture_emissions_sources
+    identifier: enteric_fermentation_cattle_pasture_emissions_sources
+  - name: enteric_fermentation_cattle_pasture_emissions_sources_confidenc
+    identifier: enteric_fermentation_cattle_pasture_emissions_sources_confidenc
+  - name: enteric_fermentation_other_country_emissions
+    identifier: enteric_fermentation_other_country_emissions
+  - name: manure_left_on_pasture_cattle_country_emissions
+    identifier: manure_left_on_pasture_cattle_country_emissions
+  - name: manure_left_on_pasture_cattle_emissions_sources
+    identifier: manure_left_on_pasture_cattle_emissions_sources
+  - name: manure_left_on_pasture_cattle_emissions_sources_confidence
+    identifier: manure_left_on_pasture_cattle_emissions_sources_confidence
+  - name: manure_management_cattle_feedlot_country_emissions
+    identifier: manure_management_cattle_feedlot_country_emissions
+  - name: manure_management_cattle_feedlot_emissions_sources
+    identifier: manure_management_cattle_feedlot_emissions_sources
+  - name: manure_management_cattle_feedlot_emissions_sources_confidence
+    identifier: manure_management_cattle_feedlot_emissions_sources_confidence
+  - name: manure_management_other_country_emissions
+    identifier: manure_management_other_country_emissions
+  - name: other_agricultural_soil_emissions_country_emissions
+    identifier: other_agricultural_soil_emissions_country_emissions
+  - name: rice_cultivation_country_emissions
+    identifier: rice_cultivation_country_emissions
+  - name: rice_cultivation_emissions_sources
+    identifier: rice_cultivation_emissions_sources
+  - name: rice_cultivation_emissions_sources_confidence
+    identifier: rice_cultivation_emissions_sources_confidence
+  - name: synthetic_fertilizer_application_country_emissions
+    identifier: synthetic_fertilizer_application_country_emissions
+  - name: synthetic_fertilizer_application_emissions_sources
+    identifier: synthetic_fertilizer_application_emissions_sources
+  - name: synthetic_fertilizer_application_emissions_sources_confidence
+    identifier: synthetic_fertilizer_application_emissions_sources_confidence
+- name: climate_data_buildings
+  database: climate_trace
+  schema: buildings
+  tables:
+  - name: other_onsite_fuel_usage_country_emissions
+    identifier: other_onsite_fuel_usage_country_emissions
+  - name: residential_and_commercial_onsite_fuel_usage_country_emissions
+    identifier: residential_and_commercial_onsite_fuel_usage_country_emissions
+- name: climate_data_fluorinated_gases
+  database: climate_trace
+  schema: fluorinated_gases
+  tables:
+  - name: fluorinated_gases_country_emissions
+    identifier: fluorinated_gases_country_emissions
+- name: climate_data_forestry_and_land_use
+  database: climate_trace
+  schema: forestry_and_land_use
+  tables:
+  - name: forest_land_clearing_country_emissions
+    identifier: forest_land_clearing_country_emissions
+  - name: forest_land_clearing_emissions_sources
+    identifier: forest_land_clearing_emissions_sources
+  - name: forest_land_clearing_emissions_sources_confidence
+    identifier: forest_land_clearing_emissions_sources_confidence
+  - name: forest_land_degradation_country_emissions
+    identifier: forest_land_degradation_country_emissions
+  - name: forest_land_degradation_emissions_sources
+    identifier: forest_land_degradation_emissions_sources
+  - name: forest_land_degradation_emissions_sources_confidence
+    identifier: forest_land_degradation_emissions_sources_confidence
+  - name: forest_land_fires_country_emissions
+    identifier: forest_land_fires_country_emissions
+  - name: forest_land_fires_emissions_sources
+    identifier: forest_land_fires_emissions_sources
+  - name: forest_land_fires_emissions_sources_confidence
+    identifier: forest_land_fires_emissions_sources_confidence
+  - name: net_forest_land_country_emissions
+    identifier: net_forest_land_country_emissions
+  - name: net_forest_land_emissions_sources
+    identifier: net_forest_land_emissions_sources
+  - name: net_forest_land_emissions_sources_confidence
+    identifier: net_forest_land_emissions_sources_confidence
+  - name: net_shrubgrass_country_emissions
+    identifier: net_shrubgrass_country_emissions
+  - name: net_shrubgrass_emissions_sources
+    identifier: net_shrubgrass_emissions_sources
+  - name: net_shrubgrass_emissions_sources_confidence
+    identifier: net_shrubgrass_emissions_sources_confidence
+  - name: net_wetland_country_emissions
+    identifier: net_wetland_country_emissions
+  - name: net_wetland_emissions_sources
+    identifier: net_wetland_emissions_sources
+  - name: net_wetland_emissions_sources_confidence
+    identifier: net_wetland_emissions_sources_confidence
+  - name: removals_country_emissions
+    identifier: removals_country_emissions
+  - name: removals_emissions_sources
+    identifier: removals_emissions_sources
+  - name: removals_emissions_sources_confidence
+    identifier: removals_emissions_sources_confidence
+  - name: shrubgrass_fires_country_emissions
+    identifier: shrubgrass_fires_country_emissions
+  - name: shrubgrass_fires_emissions_sources
+    identifier: shrubgrass_fires_emissions_sources
+  - name: shrubgrass_fires_emissions_sources_confidence
+    identifier: shrubgrass_fires_emissions_sources_confidence
+  - name: water_reservoirs_country_emissions
+    identifier: water_reservoirs_country_emissions
+  - name: water_reservoirs_emissions_sources
+    identifier: water_reservoirs_emissions_sources
+  - name: water_reservoirs_emissions_sources_confidence
+    identifier: water_reservoirs_emissions_sources_confidence
+  - name: wetland_fires_country_emissions
+    identifier: wetland_fires_country_emissions
+  - name: wetland_fires_emissions_sources
+    identifier: wetland_fires_emissions_sources
+  - name: wetland_fires_emissions_sources_confidence
+    identifier: wetland_fires_emissions_sources_confidence
+- name: climate_data_fossil_fuel_operations
+  database: climate_trace
+  schema: fossil_fuel_operations
+  tables:
+  - name: coal_mining_country_emissions
+    identifier: coal_mining_country_emissions
+  - name: coal_mining_emissions_sources
+    identifier: coal_mining_emissions_sources
+  - name: coal_mining_emissions_sources_confidence
+    identifier: coal_mining_emissions_sources_confidence
+  - name: coal_mining_emissions_sources_ownership
+    identifier: coal_mining_emissions_sources_ownership
+  - name: oil_and_gas_production_and_transport_country_emissions
+    identifier: oil_and_gas_production_and_transport_country_emissions
+  - name: oil_and_gas_production_and_transport_emissions_sources
+    identifier: oil_and_gas_production_and_transport_emissions_sources
+  - name: oil_and_gas_production_and_transport_emissions_sources_confiden
+    identifier: oil_and_gas_production_and_transport_emissions_sources_confiden
+  - name: oil_and_gas_production_and_transport_emissions_sources_ownershi
+    identifier: oil_and_gas_production_and_transport_emissions_sources_ownershi
+  - name: oil_and_gas_refining_country_emissions
+    identifier: oil_and_gas_refining_country_emissions
+  - name: oil_and_gas_refining_emissions_sources
+    identifier: oil_and_gas_refining_emissions_sources
+  - name: oil_and_gas_refining_emissions_sources_confidence
+    identifier: oil_and_gas_refining_emissions_sources_confidence
+  - name: oil_and_gas_refining_emissions_sources_ownership
+    identifier: oil_and_gas_refining_emissions_sources_ownership
+  - name: other_fossil_fuel_operations_country_emissions
+    identifier: other_fossil_fuel_operations_country_emissions
+  - name: solid_fuel_transformation_country_emissions
+    identifier: solid_fuel_transformation_country_emissions
+- name: climate_data_manufacturing
+  database: climate_trace
+  schema: manufacturing
+  tables:
+  - name: aluminum_country_emissions
+    identifier: aluminum_country_emissions
+  - name: aluminum_emissions_sources
+    identifier: aluminum_emissions_sources
+  - name: aluminum_emissions_sources_confidence
+    identifier: aluminum_emissions_sources_confidence
+  - name: aluminum_emissions_sources_ownership
+    identifier: aluminum_emissions_sources_ownership
+  - name: cement_country_emissions
+    identifier: cement_country_emissions
+  - name: cement_emissions_sources
+    identifier: cement_emissions_sources
+  - name: cement_emissions_sources_confidence
+    identifier: cement_emissions_sources_confidence
+  - name: cement_emissions_sources_ownership
+    identifier: cement_emissions_sources_ownership
+  - name: chemicals_country_emissions
+    identifier: chemicals_country_emissions
+  - name: other_manufacturing_country_emissions
+    identifier: other_manufacturing_country_emissions
+  - name: other_manufacturing_emissions_sources
+    identifier: other_manufacturing_emissions_sources
+  - name: other_manufacturing_emissions_sources_confidence
+    identifier: other_manufacturing_emissions_sources_confidence
+  - name: petrochemicals_country_emissions
+    identifier: petrochemicals_country_emissions
+  - name: petrochemicals_emissions_sources
+    identifier: petrochemicals_emissions_sources
+  - name: petrochemicals_emissions_sources_confidence
+    identifier: petrochemicals_emissions_sources_confidence
+  - name: pulp_and_paper_country_emissions
+    identifier: pulp_and_paper_country_emissions
+  - name: steel_country_emissions
+    identifier: steel_country_emissions
+  - name: steel_emissions_sources
+    identifier: steel_emissions_sources
+  - name: steel_emissions_sources_confidence
+    identifier: steel_emissions_sources_confidence
+  - name: steel_emissions_sources_ownership
+    identifier: steel_emissions_sources_ownership
+  - name: steel_emissions_sources_ownership_data_source
+    identifier: steel_emissions_sources_ownership_data_source
+- name: climate_data_mineral_extraction
+  database: climate_trace
+  schema: mineral_extraction
+  tables:
+  - name: bauxite_mining_country_emissions
+    identifier: bauxite_mining_country_emissions
+  - name: bauxite_mining_emissions_sources
+    identifier: bauxite_mining_emissions_sources
+  - name: bauxite_mining_emissions_sources_confidence
+    identifier: bauxite_mining_emissions_sources_confidence
+  - name: bauxite_mining_emissions_sources_ownership
+    identifier: bauxite_mining_emissions_sources_ownership
+  - name: copper_mining_country_emissions
+    identifier: copper_mining_country_emissions
+  - name: copper_mining_emissions_sources
+    identifier: copper_mining_emissions_sources
+  - name: copper_mining_emissions_sources_confidence
+    identifier: copper_mining_emissions_sources_confidence
+  - name: copper_mining_emissions_sources_ownership
+    identifier: copper_mining_emissions_sources_ownership
+  - name: iron_mining_country_emissions
+    identifier: iron_mining_country_emissions
+  - name: iron_mining_emissions_sources
+    identifier: iron_mining_emissions_sources
+  - name: iron_mining_emissions_sources_confidence
+    identifier: iron_mining_emissions_sources_confidence
+  - name: iron_mining_emissions_sources_ownership
+    identifier: iron_mining_emissions_sources_ownership
+  - name: rock_quarrying_country_emissions
+    identifier: rock_quarrying_country_emissions
+  - name: sand_quarrying_country_emissions
+    identifier: sand_quarrying_country_emissions
+- name: climate_data_power
+  database: climate_trace
+  schema: power
+  tables:
+  - name: electricity_generation_country_emissions
+    identifier: electricity_generation_country_emissions
+  - name: electricity_generation_emissions_sources
+    identifier: electricity_generation_emissions_sources
+  - name: electricity_generation_emissions_sources_confidence
+    identifier: electricity_generation_emissions_sources_confidence
+  - name: electricity_generation_emissions_sources_ownership
+    identifier: electricity_generation_emissions_sources_ownership
+  - name: electricity_generation_emissions_sources_ownership_data_source
+    identifier: electricity_generation_emissions_sources_ownership_data_source
+  - name: other_energy_use_country_emissions
+    identifier: other_energy_use_country_emissions
+- name: climate_data_stg__all
+  database: climate_trace
+  schema: stg__all
+  tables:
+  - name: stg_cropland_fires_country_emissions
+    identifier: stg_cropland_fires_country_emissions
+- name: climate_data_transportation
+  database: climate_trace
+  schema: transportation
+  tables:
+  - name: domestic_aviation_country_emissions
+    identifier: domestic_aviation_country_emissions
+  - name: domestic_aviation_emissions_sources
+    identifier: domestic_aviation_emissions_sources
+  - name: domestic_aviation_emissions_sources_confidence
+    identifier: domestic_aviation_emissions_sources_confidence
+  - name: domestic_aviation_emissions_sources_ownership
+    identifier: domestic_aviation_emissions_sources_ownership
+  - name: domestic_shipping_country_emissions
+    identifier: domestic_shipping_country_emissions
+  - name: domestic_shipping_emissions_sources
+    identifier: domestic_shipping_emissions_sources
+  - name: domestic_shipping_emissions_sources_confidence
+    identifier: domestic_shipping_emissions_sources_confidence
+  - name: international_aviation_country_emissions
+    identifier: international_aviation_country_emissions
+  - name: international_aviation_emissions_sources
+    identifier: international_aviation_emissions_sources
+  - name: international_aviation_emissions_sources_confidence
+    identifier: international_aviation_emissions_sources_confidence
+  - name: international_aviation_emissions_sources_ownership
+    identifier: international_aviation_emissions_sources_ownership
+  - name: international_shipping_country_emissions
+    identifier: international_shipping_country_emissions
+  - name: international_shipping_emissions_sources
+    identifier: international_shipping_emissions_sources
+  - name: international_shipping_emissions_sources_confidence
+    identifier: international_shipping_emissions_sources_confidence
+  - name: other_transport_country_emissions
+    identifier: other_transport_country_emissions
+  - name: railways_country_emissions
+    identifier: railways_country_emissions
+  - name: road_transportation_country_emissions
+    identifier: road_transportation_country_emissions
+  - name: road_transportation_emissions_sources
+    identifier: road_transportation_emissions_sources
+  - name: road_transportation_emissions_sources_confidence
+    identifier: road_transportation_emissions_sources_confidence
+- name: climate_data_waste
+  database: climate_trace
+  schema: waste
+  tables:
+  - name: biological_treatment_of_solid_waste_and_biogenic_country_emissi
+    identifier: biological_treatment_of_solid_waste_and_biogenic_country_emissi
+  - name: incineration_and_open_burning_of_waste_country_emissions
+    identifier: incineration_and_open_burning_of_waste_country_emissions
+  - name: solid_waste_disposal_country_emissions
+    identifier: solid_waste_disposal_country_emissions
+  - name: solid_waste_disposal_emissions_sources
+    identifier: solid_waste_disposal_emissions_sources
+  - name: solid_waste_disposal_emissions_sources_confidence
+    identifier: solid_waste_disposal_emissions_sources_confidence
+  - name: wastewater_treatment_and_discharge_emissions_sources
+    identifier: wastewater_treatment_and_discharge_emissions_sources
