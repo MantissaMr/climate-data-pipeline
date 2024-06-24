@@ -1,3 +1,5 @@
+# This script generate a well-formatted yaml file for the file dbt will be
+# using for DAG
 import os
 from dotenv import load_dotenv
 import psycopg2

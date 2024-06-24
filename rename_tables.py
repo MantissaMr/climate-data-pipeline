@@ -1,3 +1,6 @@
+# This python script rename the names goes through each schema on my db and rename the column name so that it doesn't
+# exceed the allocated character limit of 63 characters
+
 import psycopg2
 from psycopg2 import sql
 import os

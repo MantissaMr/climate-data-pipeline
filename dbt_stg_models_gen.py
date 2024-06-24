@@ -1,3 +1,8 @@
+# This script generates dbt staging models based on the name of a table, following the 
+# format stg_table_name.. Each stg model is basically:
+# a SELECT * FROM TABLE_NAME, with table_name being referenced from a source_yaml file called
+# src_climate_data.yml, containing definition of sources and their identifiers 
+
 import os
 from dotenv import load_dotenv
 import psycopg2

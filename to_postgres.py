@@ -1,3 +1,6 @@
+#This script extracts data from the Climate Trace website and dumps it to my postgres db 
+#with each sector matching the schema name
+
 import pandas as pd
 import zipfile as zp
 import io
