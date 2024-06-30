@@ -256,12 +256,6 @@ sources:
     identifier: electricity_generation_emissions_sources_ownership_data_source
   - name: other_energy_use_country_emissions
     identifier: other_energy_use_country_emissions
-- name: climate_data_stg__all
-  database: climate_trace
-  schema: stg__all
-  tables:
-  - name: stg_cropland_fires_country_emissions
-    identifier: stg_cropland_fires_country_emissions
 - name: climate_data_transportation
   database: climate_trace
   schema: transportation

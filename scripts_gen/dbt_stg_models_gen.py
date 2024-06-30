@@ -25,10 +25,10 @@ conn = psycopg2.connect(**db_config)
 cur = conn.cursor()
 
 # Directory to save dbt staging models
-models_dir = 'dbt/climate_trace_dbt/models/stg/'
+models_dir = '../dbt/climate_trace_dbt/models/stg/'
 
 # Load YAML file with table details
-yaml_file = 'dbt/climate_trace_dbt/models/src_climate_data.yml'
+yaml_file = '../dbt/climate_trace_dbt/models/src_climate_data.yml'
 with open(yaml_file, 'r') as f:
     sources_data = yaml.safe_load(f)
 

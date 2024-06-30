@@ -1,5 +1,5 @@
 # This script generate a well-formatted yaml file for the file dbt will be
-# using for DAG
+# using to generate DAG and documentation
 import os
 from dotenv import load_dotenv
 import psycopg2
@@ -56,7 +56,7 @@ for schema, tables in data.items():
     yaml_structure['sources'].append(schema_dict)
 
 # Write the YAML file
-output_path = 'dbt/climate_trace_dbt/models/src_climate_data.yml'
+output_path = '../dbt/climate_trace_dbt/models/src_climate_data.yml'
 os.makedirs(os.path.dirname(output_path), exist_ok=True)
 with open(output_path, 'w') as file:
     yaml.dump(yaml_structure, file, sort_keys=False, default_flow_style=False)

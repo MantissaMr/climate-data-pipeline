@@ -1,0 +1,121 @@
+version: 2
+
+models:
+  - name: aluminum_emissions_with_confidence
+    description: >
+      This model joins the aluminum_emissions_sources table with the aluminum_emissions_sources_confidence
+      table under the manufacturing schema to provide a comprehensive view of 
+      emissions sources data along with their confidence factors.
+    columns:
+      - name: emissions_quantity
+        description: >
+          Quantity of gas emitted in metric tonnes. 
+          If reported quantity is zero, it means that gas is not emitted. 
+          If reported quantity is empty/null/N-A, data is not yet available.
+      - name: start_time 
+        description: >
+          The time using Coordinated Universal Time (UTC) of emissions,
+          either as an instance of start time of observation.
+      - name: end_time 
+        description: >
+          The time using Coordinated Universal Time (UTC) of emissions,
+          either as an instance of end time of observation.
+      - name: created_date 
+        description: Date country emissions quantity was added to the Climate TRACE database.
+      - name: modified_date 
+        description: Last date on which any updates were made to the dataset for the specific country.
+      - name: activity 
+        description: Qualitative confidence level for the emissions source activity data available on the emission sources table, when activity data is reported.
+      - name: co2_emissions 
+        description: >
+          Qualitative confidence level for the emissions source carbon dioxide (co2) emissions data
+          available on the emission sources table, when activity data is reported.
+      - name: ch4_emissions 
+        description: >
+          Qualitative confidence level for the emissions source methane (ch4) emissions data
+          available on the emission sources table, when activity data is reported.
+      - name: n2o_emissions 
+        description: >
+          Qualitative confidence level for the emissions source nitrous oxide (n2o) emissions data
+          available on the emission sources table, when activity data is reported.
+      - name: co2_emissions_factor 
+        description: >
+          Qualitative confidence level for the emissions source carbon dioxide (co2) emissions factor data
+          available on the emission sources table, when activity data is reported.
+      - name: ch4_emissions_factor 
+        description: >
+          Qualitative confidence level for the emissions source methane (ch4) emissions factor data
+          available on the emission sources table, when activity data is reported.
+      - name: n2o_emissions_factor 
+        description: >
+          Qualitative confidence level for the emissions source nitrous oxide (n2o) emissions factor data
+          available on the emission sources table, when activity data is reported.
+      - name: total_co2e_20yrgwp 
+        description: >
+          Qualitative confidence level for the emissions source carbon dioxide equivalent on 
+          20 year global warming potential (co2e_20yrgwp) emissions data available on 
+          the corresponding emission table, when co2e_20yrgwp emissions data is reported.
+      - name: total_co2e_100yrgwp 
+        description: >
+          Qualitative confidence level for the emissions source carbon dioxide equivalent on 
+          100 year global warming potential (co2e_100yrgwp) emissions data available on 
+          the corresponding emission table, when co2e_100yrgwp emissions data is reported.
+  - name: cement_emissions_with_confidence
+    description: >
+      This model joins the cement_emissions_sources table with the cement_emissions_sources_confidence
+      table under the manufacturing schema to provide a comprehensive view of 
+      emissions sources data along with their confidence factors.
+    columns:
+      - name: emissions_quantity
+        description: >
+          Quantity of gas emitted in metric tonnes. 
+          If reported quantity is zero, it means that gas is not emitted. 
+          If reported quantity is empty/null/N-A, data is not yet available.
+      - name: start_time 
+        description: >
+          The time using Coordinated Universal Time (UTC) of emissions,
+          either as an instance of start time of observation.
+      - name: end_time 
+        description: >
+          The time using Coordinated Universal Time (UTC) of emissions,
+          either as an instance of end time of observation.
+      - name: created_date 
+        description: Date country emissions quantity was added to the Climate TRACE database.
+      - name: modified_date 
+        description: Last date on which any updates were made to the dataset for the specific country.
+      - name: activity 
+        description: Qualitative confidence level for the emissions source activity data available on the emission sources table, when activity data is reported.
+      - name: co2_emissions 
+        description: >
+          Qualitative confidence level for the emissions source carbon dioxide (co2) emissions data
+          available on the emission sources table, when activity data is reported.
+      - name: ch4_emissions 
+        description: >
+          Qualitative confidence level for the emissions source methane (ch4) emissions data
+          available on the emission sources table, when activity data is reported.
+      - name: n2o_emissions 
+        description: >
+          Qualitative confidence level for the emissions source nitrous oxide (n2o) emissions data
+          available on the emission sources table, when activity data is reported.
+      - name: co2_emissions_factor 
+        description: >
+          Qualitative confidence level for the emissions source carbon dioxide (co2) emissions factor data
+          available on the emission sources table, when activity data is reported.
+      - name: ch4_emissions_factor 
+        description: >
+          Qualitative confidence level for the emissions source methane (ch4) emissions factor data
+          available on the emission sources table, when activity data is reported.
+      - name: n2o_emissions_factor 
+        description: >
+          Qualitative confidence level for the emissions source nitrous oxide (n2o) emissions factor data
+          available on the emission sources table, when activity data is reported.
+      - name: total_co2e_20yrgwp 
+        description: >
+          Qualitative confidence level for the emissions source carbon dioxide equivalent on 
+          20 year global warming potential (co2e_20yrgwp) emissions data available on 
+          the corresponding emission table, when co2e_20yrgwp emissions data is reported.
+      - name: total_co2e_100yrgwp 
+        description: >
+          Qualitative confidence level for the emissions source carbon dioxide equivalent on 
+          100 year global warming potential (co2e_100yrgwp) emissions data available on 
+          the corresponding emission table, when co2e_100yrgwp emissions data is reported.

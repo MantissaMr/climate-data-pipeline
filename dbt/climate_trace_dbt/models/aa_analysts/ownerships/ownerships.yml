@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: manufacturing_ownership
+    description: >
+      This model joins the cement_emissions_sources_ownership table with the aluminum_emissions_sources_ownership and
+      steel_emissions_sources_ownership tables under the manufacturing schema to provide a comprehensive view of ownership data.
+    columns:
+      - name: source_id
+        description: >
+          The internal Climate TRACE identifier for each individual source of emissions. Every distinct emissions source
+          is defined by a unique combination of facility name, country, source type, and subsector.
+      - name: source_name
+        description: >
+          Name of the entity or source that produced the emissions. Where exact names were not available,
+          Climate TRACE has created descriptive names based on source location.
+      - name: relationship 
+        description: >
+          Describes the relationship between the emisson source with the company. Entries are: operator or owner.
