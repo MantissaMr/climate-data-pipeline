@@ -7,19 +7,17 @@ models:
       table under the manufacturing schema to provide a comprehensive view of 
       emissions sources data along with their confidence factors.
     columns:
+      - name: source_id
+        description: >
+          The internal Climate TRACE identifier for each individual source of emissions.
+          Every distinct emissions source is defined by a unique combination of facility name, country, source type, and subsector.
+        tests: 
+          - not_null
       - name: emissions_quantity
         description: >
           Quantity of gas emitted in metric tonnes. 
           If reported quantity is zero, it means that gas is not emitted. 
           If reported quantity is empty/null/N-A, data is not yet available.
-      - name: start_time 
-        description: >
-          The time using Coordinated Universal Time (UTC) of emissions,
-          either as an instance of start time of observation.
-      - name: end_time 
-        description: >
-          The time using Coordinated Universal Time (UTC) of emissions,
-          either as an instance of end time of observation.
       - name: created_date 
         description: Date country emissions quantity was added to the Climate TRACE database.
       - name: modified_date 

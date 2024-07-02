@@ -49,11 +49,9 @@ aluminum_confidence AS (
         COUNT(*) FILTER (WHERE total_co2e_100yrgwp = 'low') AS low_total_co2e_100yrgwp,
         COUNT(*) FILTER (WHERE total_co2e_100yrgwp = 'medium') AS medium_total_co2e_100yrgwp,
         COUNT(*) FILTER (WHERE total_co2e_100yrgwp = 'high') AS high_total_co2e_100yrgwp,
-        COUNT(*) FILTER (WHERE total_co2e_100yrgwp = 'very high') AS very_high_total_co2e_100yrgwp,
-        created_date,
-        modified_date
+        COUNT(*) FILTER (WHERE total_co2e_100yrgwp = 'very high') AS very_high_total_co2e_100yrgwp
     FROM {{ ref('stg_aluminum_emissions_sources_confidence') }}
-    GROUP BY source_id, created_date, modified_date
+    GROUP BY source_id
 )
 SELECT
     e.source_id,
@@ -98,9 +96,7 @@ SELECT
     c.low_total_co2e_100yrgwp,
     c.medium_total_co2e_100yrgwp,
     c.high_total_co2e_100yrgwp,
-    c.very_high_total_co2e_100yrgwp,
-    c.created_date,
-    c.modified_date
+    c.very_high_total_co2e_100yrgwp
 FROM
     aluminum_emissions e
 LEFT JOIN
