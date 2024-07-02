@@ -1,7 +1,7 @@
 # Climate Trace ELT Pipeline
 
 ## Overview
-The pipeline ELT extracts emission data across diverse sectors — agriculture, fossil fuel operations, manufacturing, and others — from the [Climate Trace](https://climatetrace.org) website and loads it into a PostgreSQL database. Each sector’s CSV data is loaded into tables named accordingly within their respective schemas, with each schema dedicated to a sector. Using dbt (data build tool), I the transformed the data to further support downstream analysis.
+The ELT pipeline extracts emission data across diverse sectors — agriculture, fossil fuel operations, manufacturing, and others — from the [Climate Trace](https://climatetrace.org) website and loads it into a PostgreSQL database. Each sector’s CSV data is loaded into tables named accordingly within their respective schemas, with each schema dedicated to a sector. Using dbt (data build tool), I the transformed the data to further support downstream analysis.
 
 ![ELT Pipeline Diagram](elt_pipeline.svg)
 
