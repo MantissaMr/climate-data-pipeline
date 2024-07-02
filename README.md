@@ -7,7 +7,7 @@ This project involves developing an ELT (Extract, Load, Transform) pipeline for 
 
 ## dbt Documentation site
 I hosted the dbt documentation site for this project on GitHub pages.
-Wanna explore details about the dbt project structure, the lineage graph, tests, sources, the very soul of the staging models, etc? [hypertexting-as-soon-as-i-host-it.tld]. 
+Wanna explore details about the dbt project structure, the lineage graph, tests, sources, the very soul of the staging models, etc? Please be my guest. I insist: [dbt docs](https://mantissamr.github.io/climate-trace-dbt-docs/index.html). 
 
 ## Walkthrough
 While working on this project, it evolved. Quite a bit, actually. I took some notes. If you're curious about the process, explore the [YouTube playlist](https://youtube.com/playlist?list=PLbU2HxrUQWkeoQR7DoyaQOizyDFbxf4z9&si=2got0FXO9NA8M22O)) where I share insights, challenges, and a bit of my setup — all sprinkled with some slighty-forced humor that'll either make you uncomfortable or leave you cackling.. because why not?
