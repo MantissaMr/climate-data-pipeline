@@ -1,0 +1,45 @@
+name: Deploy DBT Docs
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy_dbt_docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.12'  # Adjust to your Python version
+
+      - name: Install DBT & dependencies
+        run: |
+          pip install dbt-postgres
+          dbt deps  # Install dbt dependencies if needed
+
+      - name: Set up PostgreSQL environment
+        env:
+          DBT_PROFILES_DIR: ${{ github.workspace }}/.dbt  # Path to profiles.yml in the workflow
+          DBT_PROFILES_FILE: $HOME/.dbt/profiles.yml  # Path to local profiles.yml
+          DBT_PROJECT_DIR: ${{ github.workspace }}/dbt/climate_trace_dbt  # Path to DBT project folder
+          DBT_HOST: ${{ secrets.DBT_HOST }}
+          DBT_USER: ${{ secrets.DBT_USER }}
+          DBT_PASS: ${{ secrets.DBT_PASS }}
+          DBT_DBNAME: ${{ secrets.DBT_DBNAME }}
+        run: |
+          mkdir -p $DBT_PROFILES_DIR
+          cp $DBT_PROFILES_FILE $DBT_PROFILES_DIR/profiles.yml
+
+      - name: Generate DBT documentation for production
+        run: dbt docs generate --profiles-dir $DBT_PROFILES_DIR --project-dir $DBT_PROJECT_DIR --profile prod
+
+      - name: Deploy DBT documentation
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ${{ github.workspace }}/dbt/climate_trace_dbt/target

@@ -35,3 +35,6 @@ Thumbs.db
 /dbt_modules/*/logs/
 /dbt_modules/*/target/
 /dbt_modules/*/dbt_modules/
+
+#Ignore .dbt directory for CD operations
+.dbt/
