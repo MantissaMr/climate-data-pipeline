@@ -42,4 +42,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ${{ github.workspace }}/dbt/climate_trace_dbt/target
+          publish_dir: /Users/alamiinsi/COMP167/mantissamr.github.io/climate-trace-dbt-docs

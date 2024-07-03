@@ -17,3 +17,6 @@ models:
       - name: relationship 
         description: >
           Describes the relationship between the emisson source with the company. Entries are: operator or owner.
+  - name: sample_model_to_check_CICD
+    description: > 
+      If you're reading this, it automatically deployed to the docs page after it's created in the DW.
