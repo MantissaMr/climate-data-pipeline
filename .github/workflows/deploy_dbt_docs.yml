@@ -15,7 +15,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.12'  # Adjust to your Python version
+          python-version: '3.12'
 
       - name: Install DBT & dependencies
         run: |
@@ -42,4 +42,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: /Users/alamiinsi/COMP167/mantissamr.github.io/climate-trace-dbt-docs
+          publish_dir: ../mantissamr.github.io/climate-trace-dbt-docs
