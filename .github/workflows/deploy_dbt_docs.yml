@@ -29,6 +29,8 @@ jobs:
           echo "  outputs:" >> $GITHUB_WORKSPACE/.dbt/profiles.yml
           echo "    prod:" >> $GITHUB_WORKSPACE/.dbt/profiles.yml
           echo "      type: postgres" >> $GITHUB_WORKSPACE/.dbt/profiles.yml
+          echo "      port: 5432" >> $GITHUB_WORKSPACE/.dbt/profiles.yml
+          echo "      threads: postgres" >> $GITHUB_WORKSPACE/.dbt/profiles.yml
           echo "      host: ${{ secrets.DBT_HOST }}" >> $GITHUB_WORKSPACE/.dbt/profiles.yml
           echo "      user: ${{ secrets.DBT_USER }}" >> $GITHUB_WORKSPACE/.dbt/profiles.yml
           echo "      pass: ${{ secrets.DBT_PASS }}" >> $GITHUB_WORKSPACE/.dbt/profiles.yml
