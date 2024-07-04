@@ -21,24 +21,40 @@ jobs:
         run: |
           pip install dbt-postgres
 
-      - name: Set up PostgreSQL environment
-        env:
-          DBT_PROFILES_DIR: ${{ github.workspace }}/.dbt  # Path to profiles.yml in the workflow
-          DBT_PROFILES_FILE: $HOME/.dbt/profiles.yml  # Path to local profiles.yml
-          DBT_PROJECT_DIR: ${{ github.workspace }}/dbt/climate_trace_dbt  # Path to DBT project folder
-          DBT_HOST: ${{ secrets.DBT_HOST }}
-          DBT_USER: ${{ secrets.DBT_USER }}
-          DBT_PASS: ${{ secrets.DBT_PASS }}
-          DBT_DBNAME: ${{ secrets.DBT_DBNAME }}
+      - name: Create DBT profiles.yml
         run: |
-          mkdir -p $DBT_PROFILES_DIR
-          cp $DBT_PROFILES_FILE $DBT_PROFILES_DIR/profiles.yml
+          mkdir -p $GITHUB_WORKSPACE/.dbt
+          echo "prod:" > $GITHUB_WORKSPACE/.dbt/profiles.yml
+          echo "  target: prod" >> $GITHUB_WORKSPACE/.dbt/profiles.yml
+          echo "  outputs:" >> $GITHUB_WORKSPACE/.dbt/profiles.yml
+          echo "    prod:" >> $GITHUB_WORKSPACE/.dbt/profiles.yml
+          echo "      type: postgres" >> $GITHUB_WORKSPACE/.dbt/profiles.yml
+          echo "      host: ${{ secrets.DBT_HOST }}" >> $GITHUB_WORKSPACE/.dbt/profiles.yml
+          echo "      user: ${{ secrets.DBT_USER }}" >> $GITHUB_WORKSPACE/.dbt/profiles.yml
+          echo "      pass: ${{ secrets.DBT_PASS }}" >> $GITHUB_WORKSPACE/.dbt/profiles.yml
+          echo "      dbname: ${{ secrets.DBT_DBNAME }}" >> $GITHUB_WORKSPACE/.dbt/profiles.yml
+          echo "      schema: prod" >> $GITHUB_WORKSPACE/.dbt/profiles.yml
 
       - name: Generate DBT documentation for production
-        run: dbt docs generate --profiles-dir $DBT_PROFILES_DIR --project-dir $DBT_PROJECT_DIR --profile prod
+        run: dbt docs generate --profiles-dir $GITHUB_WORKSPACE/.dbt --project-dir $GITHUB_WORKSPACE/dbt/climate_trace_dbt --profile prod
 
-      - name: Deploy DBT documentation
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Checkout target repository
+        uses: actions/checkout@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ../mantissamr.github.io/climate-trace-dbt-docs
+          repository: MantissaMr/mantissamr.github.io
+          ref: main
+          path: target_repo
+
+      - name: Copy DBT documentation to target repository
+        run: cp -r dbt/climate_trace_dbt/target/* target_repo/climate-trace-dbt-docs
+
+      - name: Commit and push changes
+        run: |
+          cd target_repo
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add climate-trace-dbt-docs
+          git commit -m "Update DBT documentation"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
