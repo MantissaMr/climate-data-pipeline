@@ -17,10 +17,9 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install DBT & dependencies
+      - name: Install DBT
         run: |
           pip install dbt-postgres
-          dbt deps  # Install dbt dependencies if needed
 
       - name: Set up PostgreSQL environment
         env:
